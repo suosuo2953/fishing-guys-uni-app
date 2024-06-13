@@ -84,5 +84,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     l: common_vendor.o((...args) => $options.openURL && $options.openURL(...args))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/panyoufu/Documents/GitHub/fishing-guys-uni-app/fishing-guys/uni_modules/uni-link/components/uni-link/uni-link.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/wangmingming/Documents/workspace/fishing-guys-uni-app/fishing-guys/uni_modules/uni-link/components/uni-link/uni-link.vue"]]);
 wx.createComponent(Component);
