@@ -18,6 +18,16 @@
       </uni-section>
     </view>
     <view v-if="active === 1">
+      <uni-file-picker 
+        v-model="imageValue"
+        fileMediatype="image"
+        mode="grid"
+        limit="3"
+        @select="select"
+        @progress="progress"
+        @success="success"
+        @fail="fail"
+      />
     </view>
     <view v-if="active === 2"></view>
     <view class="bottom-container">
@@ -50,6 +60,23 @@ export default {
     },
     submit: function () {
       console.log('submit')
+    },
+    select(e){
+      console.log('选择文件：',e)
+    },
+    // 获取上传进度
+    progress(e){
+      console.log('上传进度：',e)
+    },
+    
+    // 上传成功
+    success(e){
+      console.log('上传成功')
+    },
+    
+    // 上传失败
+    fail(e){
+      console.log('上传失败：',e)
     }
   }
 }
