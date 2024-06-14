@@ -18,7 +18,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.4.5",
+  "libVersion": "2.28.1",
   "appid": "touristappid",
   "projectname": "fishing-guys",
   "condition": {},

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 if (!Math) {
+  "./pages/create-task/create-task.js";
   "./pages/index/index.js";
 }
 const _sfc_main = {
@@ -16,7 +17,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/panyoufu/Documents/GitHub/fishing-guys-uni-app/fishing-guys/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "/Users/wangmingming/Documents/workspace/fishing-guys-uni-app/fishing-guys/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {
