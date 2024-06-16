@@ -19,7 +19,7 @@
     </view>
     <view v-if="active === 1">
       <uni-file-picker 
-        v-model="imageValue"
+        v-model="images"
         fileMediatype="image"
         mode="grid"
         limit="3"
@@ -29,7 +29,18 @@
         @fail="fail"
       />
     </view>
-    <view v-if="active === 2"></view>
+    <view v-if="active === 2">
+      <uni-section title="钓点评分" padding>
+        <template v-slot:decoration>
+          <view class="decoration"></view>
+        </template>
+        <uni-rate v-model="rateValue" @change="onRateChange" />
+      </uni-section>
+      
+      <view class="page-section page-section-gap">
+        <!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude"></map> -->
+      </view>
+    </view>
     <view class="bottom-container">
       <button v-if="active > 0" @click="goPrevious()">上一步</button>
       <button type="primary" v-if="[0,1].includes(active)" @click="goNext">下一步</button>
@@ -44,11 +55,16 @@ export default {
   name: 'CreateTask',
   data() {
     return {
-      active: 0,
+      active: 1,
       options: [{ title: '垂钓数据'}, { title: '成果图片' }, { title: '钓点评价' }],
       count: '',
       time: '',
-      imageValue: ''
+      images: [],
+      rateValue: 0,
+      id:0, // 使用 marker点击事件 需要填写id
+      title: 'map',
+      latitude: 39.909,
+      longitude: 116.39742,
     };
   },
   methods: {
@@ -56,6 +72,7 @@ export default {
       this.active--
     },
     goNext: function () {
+      console.log('imageValue:', this.imageValue)
       this.active++
     },
     submit: function () {
@@ -77,6 +94,9 @@ export default {
     // 上传失败
     fail(e){
       console.log('上传失败：',e)
+    },
+    onChange(e) {
+      console.log('rate发生改变:' + JSON.stringify(e))
     }
   }
 }
@@ -105,7 +125,7 @@ export default {
     height: 6px;
     margin-right: 4px;
     border-radius: 50%;
-    // background-color: #18bc37;
+    background-color: #18bc37;
   }
 }
 
